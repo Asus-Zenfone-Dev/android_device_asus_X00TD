@@ -28,65 +28,47 @@
 #
 
 on boot
-    # Camera
-    chmod 0660 /sys/android_camera/sensor
-    chown system system /sys/android_camera/sensor
-
-    # Fingerprint
-    chmod 0600 /data/misc/fpc/calibration_image.pndat
-
-    # Flash
-    chmod 0660 /sys/class/leds/led:flash_0/brightness
-    chmod 0660 /sys/class/leds/led:flash_1/brightness
-    chmod 0660 /sys/class/leds/led:flash_2/brightness
-    chmod 0660 /sys/class/leds/led:torch_0/brightness
-    chmod 0660 /sys/class/leds/led:torch_1/brightness
-    chmod 0660 /sys/class/leds/led:torch_2/brightness
-    chmod 0660 /sys/class/leds/led:switch_0/brightness
-    chmod 0660 /sys/class/leds/led:switch_1/brightness
-    chmod 0660 /sys/class/leds/flashlight/brightness
-    chown system system /sys/class/leds/led:flash_0/brightness
-    chown system system /sys/class/leds/led:flash_1/brightness
-    chown system system /sys/class/leds/led:flash_2/brightness
-    chown system system /sys/class/leds/led:torch_0/brightness
-    chown system system /sys/class/leds/led:torch_1/brightness
-    chown system system /sys/class/leds/led:torch_2/brightness
-    chown system system /sys/class/leds/led:switch_0/brightness
-    chown system system /sys/class/leds/led:switch_1/brightness
-    chown system system /sys/class/leds/flashlight/brightness
-
-    # IR
-    chmod 0660 /dev/spidev7.1
-    chown system system /dev/spidev7.1
-
-    # Leds
-    chmod 0640 /sys/class/leds/red/delay_on
-    chmod 0640 /sys/class/leds/red/delay_off
-    chmod 0640 /sys/class/leds/red/breath
-    chown system system /sys/class/leds/red/delay_on
-    chown system system /sys/class/leds/red/delay_off
-    chown system system /sys/class/leds/red/breath
-
-    # Power supply
-    chmod 0660 /sys/class/power_supply/battery/input_suspend
-    chmod 0660 /sys/class/power_supply/battery/charging_enabled
-    chown system system /sys/class/power_supply/battery/input_suspend
-    chown system system /sys/class/power_supply/battery/charging_enabled
-
-    # Thermal
-    chmod 0770 /sys/class/power_supply/battery/device/thermalcall
-    chown system system /sys/class/power_supply/battery/device/thermalcall
+    # Huaqin modify for ZQL1650-143 by wangxiang at 2018/01/23 start 
+    chmod 0666 /dev/fpsdev0
+    chown system system /dev/fpsdev0
+    # Huaqin modify for ZQL1650-143 by wangxiang at 2018/01/23 end 
+    # Huaqin add for ZQL1650-143 by wangxiang at 2018/02/09 end 
+    chmod 0666 /dev/goodix_fp
+    chown system system /dev/goodix_fp
+    # Huaqin add for ZQL1650-143 by wangxiang at 2018/02/09 end 
+    # Huaqin add for ZQL1820-42 by puqirui at 2018/08/02 start 
+    chmod 0666 /dev/focaltech_fp
+    chown system system /dev/focaltech_fp
+    # Huaqin add for ZQL1820-42 by puqirui at 2018/08/02 end 
 
     # Enable camera read sensors data
     setprop persist.camera.gyro.disable 0
 
-on post-fs-data
-    mkdir /persist/qti_fp 0700 system system
-    mkdir /mnt/vendor/persist/fpc 0770 system system	
-    copy /data/vendor/fpc/user.db /data/vendor_de/0/fpdata/user.db	
-    chown system system /data/vendor_de/0/fpdata/user.db	
-    rm /data/vendor/fpc/user.db
+    # Permissions for stk3x1x promiximity and light sensors
+    chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_enable
+    chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_delay
+    chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_calibrate
+    chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_enable_wakeup
+    chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_flush
+    chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_name
+    chown system system /sys/class/sensors/stk3x1x-proximity/sensors_enable
+    chown system system /sys/class/sensors/stk3x1x-proximity/sensors_delay
+    chown system system /sys/class/sensors/stk3x1x-proximity/sensors_calibrate
+    chown system system /sys/class/sensors/stk3x1x-proximity/sensors_enable_wakeup
+    chown system system /sys/class/sensors/stk3x1x-proximity/sensors_flush
+    chown system system /sys/class/sensors/stk3x1x-proximity/sensors_name
 
-# Workaround for camera HAL can not read sys property
-on property:sys.camera.face.unlock=*
-    setprop vendor.camera.face.unlock ${sys.camera.face.unlock}
+    chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_enable
+    chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_delay
+    chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_calibrate
+    chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_enable_wakeup
+    chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_flush
+    chmod 0644 /sys/class/sensors/stk3x1x-light/sensors_name
+    chown system system /sys/class/sensors/stk3x1x-light/sensors_enable
+    chown system system /sys/class/sensors/stk3x1x-light/sensors_delay
+    chown system system /sys/class/sensors/stk3x1x-light/sensors_calibrate
+    chown system system /sys/class/sensors/stk3x1x-light/sensors_enable_wakeup
+    chown system system /sys/class/sensors/stk3x1x-light/sensors_flush
+    chown system system /sys/class/sensors/stk3x1x-light/sensors_name
+
+    chown radio radio sys/module/stk3x1x/parameters/call_status_flag
