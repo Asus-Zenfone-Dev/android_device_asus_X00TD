@@ -631,12 +631,6 @@ vendor/firmware/cpp_firmware_v1_12_0.fw
 vendor/lib/libois_bu63165.so
 vendor/lib/libois_lc898122.so
 
-# Display calibration
-vendor/etc/qdcm_calib_data_huaxing_nt36672_fhd_video_mode_dsi_panel.xml
-vendor/etc/qdcm_calib_data_shenchao_td4310_fhd_video_mode_dsi_panel.xml
-vendor/etc/qdcm_calib_data_tianma_nt36672_fhd_video_mode_dsi_panel.xml
-vendor/etc/qdcm_calib_data_tianma_td4310_fhd_video_mode_dsi_panel.xml
-
 # Fingerprint
 -vendor/app/QFingerprintService/QFingerprintService.apk
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
