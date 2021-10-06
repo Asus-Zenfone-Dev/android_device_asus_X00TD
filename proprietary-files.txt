@@ -1,18 +1,13 @@
-# Not appended blobs from whyred-user 9 PKQ1.180904.001 V12.0.2.0.PEIMIXM release-keys
-
 # Audio Power Amplifier
-vendor/firmware/dbmd4_va_fw.bin
-vendor/firmware/tas2557_uCDSP.bin
 vendor/firmware/tfa98xx.cnt
-vendor/firmware/voice_amodel.bin
 
 # Audio ACDB
 vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
