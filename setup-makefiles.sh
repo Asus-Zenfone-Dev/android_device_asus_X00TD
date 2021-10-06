@@ -8,8 +8,8 @@
 
 set -e
 
-export DEVICE=whyred
+export DEVICE=X00TD
 export DEVICE_COMMON=sdm660-common
-export VENDOR=xiaomi
+export VENDOR=asus
 
 "./../../${VENDOR}/${DEVICE_COMMON}/setup-makefiles.sh" "$@"

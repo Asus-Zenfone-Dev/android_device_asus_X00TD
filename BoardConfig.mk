@@ -5,9 +5,9 @@
 #
 
 # Inherit from sdm660-common
-include device/xiaomi/sdm660-common/BoardConfigCommon.mk
+include device/asus/sdm660-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/xiaomi/whyred
+DEVICE_PATH := device/asus/X00TD
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2160
@@ -20,7 +20,7 @@ TARGET_HW_DISK_ENCRYPTION := true
 TARGET_SCREEN_DENSITY := 440
 
 # Kernel
-TARGET_KERNEL_CONFIG := whyred_defconfig
+TARGET_KERNEL_CONFIG := X00TD_defconfig
 
 # Manifest
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
@@ -35,7 +35,7 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2018-11-01
+VENDOR_SECURITY_PATCH := 2020-12-05
 
 # Inherit the proprietary files
-include vendor/xiaomi/whyred/BoardConfigVendor.mk
+include vendor/asus/X00TD/BoardConfigVendor.mk

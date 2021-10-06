@@ -12,20 +12,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 # Inherit some common Lineage stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit from whyred device
+# Inherit from X00TD device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-PRODUCT_BRAND := Xiaomi
-PRODUCT_DEVICE := whyred
-PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := lineage_whyred
-PRODUCT_MODEL := Redmi Note 5
+PRODUCT_NAME := lineage_X00TD
+PRODUCT_DEVICE := X00TD
+PRODUCT_BRAND := asus
+PRODUCT_MODEL := Zenfone Max Pro M1
+PRODUCT_MANUFACTURER := asus
 
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+PRODUCT_GMS_CLIENTID_BASE := android-asus
 
-TARGET_VENDOR_PRODUCT_NAME := whyred
+TARGET_VENDOR_PRODUCT_NAME := X00TD
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="whyred-user 8.1.0 OPM1.171019.011 V9.5.11.0.OEIMIFA release-keys"
+    PRIVATE_BUILD_DESC="sdm660_64-user 10 QKQ1 72 release-keys"
 
-BUILD_FINGERPRINT := xiaomi/whyred/whyred:8.1.0/OPM1.171019.011/V9.5.11.0.OEIMIFA:user/release-keys
+BUILD_FINGERPRINT := asus/WW_X00TD/ASUS_X00TD_2:9/QKQ1/17.2017.2012.438-20201203:user/release-keys

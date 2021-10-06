@@ -5,9 +5,9 @@
 #
 
 # Inherit from sdm660-common
-$(call inherit-product, device/xiaomi/sdm660-common/sdm660.mk)
+$(call inherit-product, device/asus/sdm660-common/sdm660.mk)
 
-DEVICE_PATH := device/xiaomi/whyred
+DEVICE_PATH := device/asus/X00TD
 
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
@@ -45,4 +45,4 @@ PRODUCT_PACKAGES += \
     X00TDWifiOverlay
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/whyred/whyred-vendor.mk)
+$(call inherit-product, vendor/asus/X00TD/X00TD-vendor.mk)
