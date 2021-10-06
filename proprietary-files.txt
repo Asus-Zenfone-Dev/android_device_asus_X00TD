@@ -658,10 +658,6 @@ vendor/firmware/a530_pfp.fw
 vendor/firmware/a530_pm4.fw
 vendor/firmware/a540_gpmu.fw2
 
-# Keystore
-vendor/lib/hw/keystore.sdm660.so
-vendor/lib64/hw/keystore.sdm660.so
-
 # Sensors
 vendor/bin/sensors.qti
 vendor/etc/sensors/hals.conf
